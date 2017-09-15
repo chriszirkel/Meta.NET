@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Linq;
+using Meta.NET.Extensions;
 
-namespace Meta.NET.Extensions
+namespace Meta.NET
 {
-    public static class StringExtension
+    public static class Url
     {
-        public static string MakeUrlAbsolute(this string relativeUrl, string baseUrl)
+        public static string MakeUrlAbsolute(string baseUrl, string relativeUrl)
         {
             var relativeParsed = new Uri(relativeUrl, UriKind.RelativeOrAbsolute);
 
@@ -21,7 +21,7 @@ namespace Meta.NET.Extensions
             return relativeParsed.ToString();
         }
 
-        public static string GetUrlProvider(this string absoluteUrl)
+        public static string GetUrlProvider(string absoluteUrl)
         {
             var absoluteParsed = new Uri(absoluteUrl, UriKind.Absolute);
             var host = absoluteParsed.Host;

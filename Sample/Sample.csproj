@@ -5,6 +5,8 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='AppVeyor|AnyCPU'" />
+
   <ItemGroup>
     <ProjectReference Include="..\Meta.NET\Meta.NET.csproj" />
   </ItemGroup>

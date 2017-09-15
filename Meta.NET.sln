@@ -7,22 +7,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meta.NET", "Meta.NET\Meta.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{23B1F45F-B85A-4252-AC8F-51D32D050A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{D26D4A72-03F1-4B87-95F2-8A815044B4C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{D26D4A72-03F1-4B87-95F2-8A815044B4C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppVeyor|Any CPU = AppVeyor|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860A0EEC-EFDC-4CD2-B2E4-6FEDD3892BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23B1F45F-B85A-4252-AC8F-51D32D050A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26D4A72-03F1-4B87-95F2-8A815044B4C1}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{D26D4A72-03F1-4B87-95F2-8A815044B4C1}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{D26D4A72-03F1-4B87-95F2-8A815044B4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D26D4A72-03F1-4B87-95F2-8A815044B4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D26D4A72-03F1-4B87-95F2-8A815044B4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU

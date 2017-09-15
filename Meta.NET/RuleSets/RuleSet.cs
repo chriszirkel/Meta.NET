@@ -7,6 +7,8 @@ namespace Meta.NET.RuleSets
 {
     public class RuleSet
     {
+        public string RuleSetKey {get; }
+
         public List<Rule> Rules { get; } = new List<Rule>();
 
         public delegate string DefaultValueFunc(IContext context);
@@ -21,8 +23,9 @@ namespace Meta.NET.RuleSets
 
         public ProcessorFunc Processor { get; set; }
 
-        public RuleSet()
+        public RuleSet(string ruleSetKey)
         {
+            RuleSetKey = ruleSetKey;
         }
     }
 }

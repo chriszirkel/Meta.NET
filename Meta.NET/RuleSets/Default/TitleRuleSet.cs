@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Meta.NET.RuleSets
+namespace Meta.NET.RuleSets.Default
 {
     public class TitleRuleSet : RuleSet
     {
-        public TitleRuleSet()
+        public TitleRuleSet() : this("title") { }
+
+        public TitleRuleSet(string ruleSetKey) : base(ruleSetKey)
         {
             Rules.Add(new Rule("meta[property=\"og:title\"]", element => element.GetAttribute("content")));
             Rules.Add(new Rule("meta[name=\"twitter:title\"]", element => element.GetAttribute("content")));

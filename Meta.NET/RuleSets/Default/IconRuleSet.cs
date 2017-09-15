@@ -5,11 +5,13 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using Meta.NET.Extensions;
 
-namespace Meta.NET.RuleSets
+namespace Meta.NET.RuleSets.Default
 {
     public class IconRuleSet : RuleSet
     {
-        public IconRuleSet()
+        public IconRuleSet() : this("icon") { }
+
+        public IconRuleSet(string ruleSetKey) : base(ruleSetKey)
         {
             Rules.Add(new Rule("link[rel=\"apple-touch-icon\"]", element => element.GetAttribute("href")));
             Rules.Add(new Rule("link[rel=\"apple-touch-icon-precomposed\"]", element => element.GetAttribute("href")));
@@ -36,7 +38,7 @@ namespace Meta.NET.RuleSets
 
             DefaultValue = (context) => "favicon.ico";
 
-            Processor = (iconUrl, context) => iconUrl.MakeUrlAbsolute(context.Url);
+            Processor = (iconUrl, context) => Url.MakeUrlAbsolute(context.Url, iconUrl);
         }
     }
 }

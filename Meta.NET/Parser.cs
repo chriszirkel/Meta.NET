@@ -1,19 +1,16 @@
 ﻿using AngleSharp.Dom.Html;
 using AngleSharp.Parser.Html;
 using Meta.NET.RuleSets;
-using System;
+using Meta.NET.RuleSets.Default;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using static Meta.NET.RuleSets.Rule;
-using static Meta.NET.RuleSets.RuleSet;
 
 namespace Meta.NET
 {
     public class Parser
     {
-        public Dictionary<string, RuleSet> RuleSets { get; set; }
+        public List<RuleSet> RuleSets { get; }
 
         public Parser()
         {
@@ -22,18 +19,18 @@ namespace Meta.NET
             // ggfs. den RuleSetKey in die RuleSet wieder integrieren => in der RuleSetCollection dann intern ein Dict verwenden und nur Methoden zum hinzufügen von RuleSets anbieten,
             // zugriff über index oder direkte GetRuleSetByKey...
 
-            RuleSets = new Dictionary<string, RuleSet>();
-            RuleSets.Add("description", new DescriptionRuleSet());
-            RuleSets.Add("title", new TitleRuleSet());
-            RuleSets.Add("type", new TypeRuleSet());
-            RuleSets.Add("url", new UrlRuleSet());
-            RuleSets.Add("provider", new ProviderRuleSet());
-            RuleSets.Add("keywords", new KeywordsRuleSet());
-            RuleSets.Add("image", new ImageRuleSet());
-            RuleSets.Add("icon", new IconRuleSet());
+            RuleSets = new List<RuleSet>();
+            RuleSets.Add(new DescriptionRuleSet());
+            RuleSets.Add(new TitleRuleSet());
+            RuleSets.Add(new TypeRuleSet());
+            RuleSets.Add(new UrlRuleSet());
+            RuleSets.Add(new ProviderRuleSet());
+            RuleSets.Add(new KeywordsRuleSet());
+            RuleSets.Add(new ImageRuleSet());
+            RuleSets.Add(new IconRuleSet());
         }
 
-        public Parser(Dictionary<string, RuleSet> ruleSets)
+        public Parser(List<RuleSet> ruleSets)
         {
             RuleSets = ruleSets;
         }
@@ -68,8 +65,8 @@ namespace Meta.NET
 
             foreach (var ruleSet in RuleSets)
             {
-                var result = BuildRuleSet(ruleSet.Value, document, context);
-                resultSet.Add(ruleSet.Key, result);
+                var result = BuildRuleSet(ruleSet, document, context);
+                resultSet.Add(ruleSet.RuleSetKey, result);
             }
 
             return resultSet;

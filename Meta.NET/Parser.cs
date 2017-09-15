@@ -48,6 +48,16 @@ namespace Meta.NET
             }
         }
 
+        public async Task<Dictionary<string, string>> ParseUrlAsync(string url, HttpMessageHandler handler)
+        {
+            using (var httpClient = new HttpClient(handler))
+            {
+                var html = await httpClient.GetStringAsync(url);
+
+                return await ParseHtmlAsync(html, url);
+            }
+        }
+
         public async Task<Dictionary<string, string>> ParseHtmlAsync(string html, string url)
         {
             var resultSet = new Dictionary<string, string>();

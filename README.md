@@ -5,6 +5,7 @@ A .NET library for parsing metadata in web pages. This library has been ported t
 
 ## Overview
 ### Installation
+<<<<<<< HEAD
 Available on NuGet: [Meta.NET](http://www.nuget.org/packages/Meta.NET/)
 [![NuGet](https://img.shields.io/nuget/v/Meta.NET.svg)](https://www.nuget.org/packages/Meta.NET/)
 
@@ -33,3 +34,9 @@ This library employs parsers for the following formats:
 [twitter](https://dev.twitter.com/cards/markup)
 
 [meta tags](https://developer.mozilla.org/en/docs/Web/HTML/Element/meta)
+=======
+* Available on NuGet: [Meta.NET](http://www.nuget.org/packages/Meta.NET/)
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/Meta.NET/)
+
+### Purpose
+>>>>>>> 32652eae68dbe7b66ccee3b0d10cc18be129e8a0

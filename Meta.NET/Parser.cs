@@ -30,9 +30,16 @@ namespace Meta.NET
             RuleSets.Add(new IconRuleSet());
         }
 
-        public Parser(List<RuleSet> ruleSets)
+        public Parser(IEnumerable<RuleSet> ruleSets)
         {
-            RuleSets = ruleSets;
+            RuleSets = new List<RuleSet>();
+            RuleSets.AddRange(ruleSets);
+        }
+
+        public Parser(params RuleSet[] ruleSets)
+        {
+            RuleSets = new List<RuleSet>();
+            RuleSets.AddRange(ruleSets);
         }
 
         public async Task<Dictionary<string, string>> ParseUrlAsync(string url)

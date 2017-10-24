@@ -26,15 +26,17 @@ namespace Meta.NET
             var absoluteParsed = new Uri(absoluteUrl, UriKind.Absolute);
             var host = absoluteParsed.Host;
 
-            var provider = string.Join
-                (" ", Regex
-                    .Replace(host, "www[a-zA-Z0-9]*\\.", "")
-                    .Replace(".co.", ".")
-                    .Split('.')
-                    .Slice(0, -1)
-                );
+            return host;
 
-            return provider;
+            //var provider = string.Join
+            //    (" ", Regex
+            //        .Replace(host, "www[a-zA-Z0-9]*\\.", "")
+            //        .Replace(".co.", ".")
+            //        .Split('.')
+            //        .Slice(0, -1)
+            //    );
+
+            //return provider;
         }
     }
 }

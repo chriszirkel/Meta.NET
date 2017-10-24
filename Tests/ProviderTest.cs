@@ -19,11 +19,11 @@ namespace Meta.NET.Tests
         {
             TestContext.WriteLine("gets a provider with no subdomain");
 
-            Assert.AreEqual("example", Url.GetUrlProvider("https://example.com/this/?id=that"), "gets a provider with no subdomain");
-            Assert.AreEqual("example", Url.GetUrlProvider("https://www.example.com/this/?id=that"), "removes www as a subdomain");
-            Assert.AreEqual("example", Url.GetUrlProvider("https://www1.example.com/this/?id=that"), "removes www1 as a subdomain");
-            Assert.AreEqual("things example", Url.GetUrlProvider("https://things.example.com/this/?id=that"), "preserves non-www subdomains");
-            Assert.AreEqual("things example", Url.GetUrlProvider("https://things.example.co.uk/this/?id=that"), "removes secondary TLDs");
+            Assert.AreEqual("example.com", Url.GetUrlProvider("https://example.com/this/?id=that"), "gets a provider with no subdomain");
+            Assert.AreEqual("www.example.com", Url.GetUrlProvider("https://www.example.com/this/?id=that"), "removes www as a subdomain");
+            Assert.AreEqual("www1.example.com", Url.GetUrlProvider("https://www1.example.com/this/?id=that"), "removes www1 as a subdomain");
+            Assert.AreEqual("things.example.com", Url.GetUrlProvider("https://things.example.com/this/?id=that"), "preserves non-www subdomains");
+            Assert.AreEqual("things.example.co.uk", Url.GetUrlProvider("https://things.example.co.uk/this/?id=that"), "removes secondary TLDs");
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Meta.NET.Tests
         {
             TestContext.WriteLine("adds a provider when URL passed in");
 
-            var sampleProvider = "example";
+            var sampleProvider = "www.example.com";
             var emptyHtml =
                 $"<html>" +
                 $"<head>" +
